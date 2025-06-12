@@ -39,7 +39,7 @@ source venv/bin/activate
 pip install selenium scrapy scikit-learn pandas google-generativeai
 ```
 4. Cấu hình API Key của Gemini
-Tạo file api_key.py trong thư mục gemini_integration/ (hoặc thư mục chứa script).
+- Tạo file api_key.py trong thư mục ai_agent (hoặc thư mục chứa script).
 Thêm khóa API của bạn vào file:
 **api_key.py**
 ```
@@ -48,28 +48,33 @@ gemini_api_key = "YOUR_GEMINI_API_KEY_HERE"
 QUAN TRỌNG: Thêm api_key.py vào file .gitignore để tránh đẩy lên GitHub công khai.
 Cách sử dụng
 1. Thu thập dữ liệu
-Chạy Scrapy Spider:
-```
-cd scraping/scrapy_spiders
-scrapy crawl my_spider -o output.json #hoặc output.csv
-```
-Chạy script Selenium:
-```
-python scraping/selenium_scripts/scraper_script.py
-```
+Chạy Scrapy Spider: 
 
-- Đảm bảo dữ liệu được lưu vào thư mục data/raw_data/ (hoặc vị trí bạn đã cấu hình trong script).
+
+**Bằng lệnh sau scrapy crawl name -o name_file.type_file**
+
+Trong đó : 
+
+- **name** phải trùng với name trong file laptop/spiders/laptop_spiders hoặc trùng với file spider của bạn (ở đây của tôi là ***"laptop_spider"***)
+
+- **name_file** là tên file xuất , đang tên dễ nhớ , dễ lưu 
+
+- **type_file** là kiểu file xuất như csv , json , ...
+
+```
+scrapy crawl laptop_spider -o output.csv
+```
 
 2. Tiền xử lý và chuẩn bị dữ liệu
 - Chạy script tiền xử lý dữ liệu:
 ```
-python machine_learning/data_preprocessing.py
+python ai_agent/model.py
 ```
-- Script này sẽ tạo dữ liệu sạch, sẵn sàng cho mô hình AI (được lưu tại data/processed_data/ hoặc vị trí tương tự).
+- Sau khi chạy script sẽ xuất một file ***recommendation_model.pkl*** , đây file mô hình đã được đóng gói sau khi là sạch dữ liệu.
 3. Bắt đầu tư vấn với Gemini
 Chạy script chính để tương tác với Gemini:
 ```
-python gemini_integration/ai_agent.py
+python ai_agent/ai_agent.py
 ```
 - Bạn có thể hỏi các câu như: "Laptop nào có giá dưới 10 triệu?", "Gợi ý laptop có 8GB RAM".
 

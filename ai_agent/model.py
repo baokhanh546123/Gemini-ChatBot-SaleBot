@@ -2,11 +2,18 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import pickle
+from pathlib import Path
 
+current_dir = Path(__file__).parent
+project_root = current_dir.parent.parent
+
+input_csv_path = project_root / "Gemini-ChatBot-SaleBot" / "output.csv"
+
+output_pkl_path = project_root / "Gemini-ChatBot-SaleBot" / "recommendation_model.pkl"
 # Đọc và làm sạch dữ liệu từ file Excel
 def load_laptop_data():
     try:
-        laptop_data = pd.read_csv('D:\\python\\HocData\\Scrape_Data\\laptop\\output.csv', encoding='latin-1')
+        laptop_data = pd.read_csv(input_csv_path, encoding='latin-1')
         print("Raw data loaded successfully. Shape:", laptop_data.shape)
         
         # Kiểm tra và in số lượng giá trị thiếu
@@ -71,7 +78,7 @@ if __name__ == "__main__":
         print("Loaded data sample with NaN handled:\n", laptop_data.head() if not laptop_data.empty else "No data available")
         tfidf, cosine_sim = train_recommendation_model(laptop_data)
         if tfidf is not None and cosine_sim is not None:
-            with open('D:\\python\\HocData\\Scrape_Data\\laptop\\recommendation_model.pkl', 'wb') as f:
+            with open(output_pkl_path, 'wb') as f:
                 pickle.dump({'tfidf': tfidf, 'cosine_sim': cosine_sim, 'data': laptop_data}, f)
             print("Model trained and saved successfully.")
         else:

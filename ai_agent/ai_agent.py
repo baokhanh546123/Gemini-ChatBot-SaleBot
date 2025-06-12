@@ -3,11 +3,12 @@ import google.generativeai as genai
 import pickle
 import re
 from api_key import gemini_api_key
+from model import input_csv_path , output_pkl_path
 
 # Đọc dữ liệu và mô hình
 def load_model_and_data():
     try:
-        with open('D:\\python\\HocData\\Scrape_Data\\laptop\\recommendation_model.pkl', 'rb') as f:
+        with open(output_pkl_path, 'rb') as f:
             model_data = pickle.load(f)
         return model_data['data'], model_data['tfidf'], model_data['cosine_sim']
     except FileNotFoundError:
@@ -16,7 +17,7 @@ def load_model_and_data():
 
 def load_laptop_data():
     try:
-        laptop_data = pd.read_csv('D:\\python\\HocData\\Scrape_Data\\laptop\\output.csv', encoding='latin-1')
+        laptop_data = pd.read_csv(input_csv_path, encoding='latin-1')
         print("Raw data loaded successfully. Shape:", laptop_data.shape)
         
         # Kiểm tra và in số lượng giá trị thiếu
