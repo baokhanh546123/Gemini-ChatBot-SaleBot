@@ -51,13 +51,13 @@ Cách sử dụng
 Chạy Scrapy Spider: 
 
 
-**Bằng lệnh sau scrapy crawl name -o name_file.type_file**
+**Bằng lệnh sau ```scrapy crawl name -o name_file.type_file```**
 
 Trong đó : 
 
 - **name** phải trùng với name trong file laptop/spiders/laptop_spiders hoặc trùng với file spider của bạn (ở đây của tôi là ***"laptop_spider"***)
 
-- **name_file** là tên file xuất , đang tên dễ nhớ , dễ lưu 
+- **name_file** là tên file xuất , đặt tên dễ nhớ , dễ lưu 
 
 - **type_file** là kiểu file xuất như csv , json , ...
 
