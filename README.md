@@ -65,6 +65,8 @@ Trong đó :
 scrapy crawl laptop_spider -o output.csv
 ```
 
+**Lưu ý : Ở đây , tôi đã cào dữ liệu tuy nhiên cần xem xét về mặt thời gian nếu thời gian làm dự án xa với thời phát hành nên cào lại dữ liệu vì dữ liệu có bị cũ.**
+
 2. Tiền xử lý và chuẩn bị dữ liệu
 - Chạy script tiền xử lý dữ liệu:
 ```
