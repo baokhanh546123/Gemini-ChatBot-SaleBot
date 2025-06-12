@@ -19,8 +19,8 @@ Hệ điều hành: Windows, macOS, hoặc Linux.
 ### Cài đặt
 1. Clone Repository 
 ```
-git clone https://github.com/baokhanh546123/ChatBot-Gemini-SaleBot.git
-cd ChatBot-Gemini-SaleBot
+git clone https://github.com/baokhanh546123/Gemini-ChatBot-SaleBot.git
+cd Gemini-ChatBot-SaleBot
 ```
 2. Tạo và kích hoạt môi trường ảo (khuyên dùng)
 ```
