@@ -82,3 +82,7 @@ python ai_agent/ai_agent.py
 
 ### Giấy phép
 - Dự án này được phát hành dưới Giấy phép MIT. Xem tệp LICENSE để biết chi tiết.
+
+### Lời cảm ơn 
+-   Chúng tôi xin chân thành cảm ơn tất cả các bạn đã dành thời gian quan tâm và xem xét dự án này. Sự ủng hộ và phản hồi của các bạn là nguồn động lực quý báu đối với chúng tôi.
+-   Dự án này sử dụng dữ liệu được thu thập từ trang web Hoàng Hà Mobile (https://hoanghamobile.com/) thông qua quá trình cào dữ liệu (web scraping). Chúng tôi xin gửi lời cảm ơn đặc biệt tới Hoàng Hà Mobile vì đã cung cấp nguồn dữ liệu phong phú này. Mọi dữ liệu thu thập được chỉ phục vụ cho mục đích nghiên cứu và học tập, tuyệt đối không nhằm mục đích thương mại hay bất kỳ hành vi vi phạm bản quyền nào.
